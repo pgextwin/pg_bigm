@@ -4,7 +4,8 @@
   "upstream": {
     "repository": "pgbigm/pg_bigm",
     "ref": "v1.2-20250903",
-    "version": "1.2"
+    "version": "1.2",
+    "commit": "735dceba0ecdd8ac1aaaaa207226a7102b6bbd71"
   },
   "postgresql": {
     "minMajor": 14,
