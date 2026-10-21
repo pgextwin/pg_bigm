@@ -42,7 +42,7 @@ jobs:
       id-token: write
       attestations: write
       artifact-metadata: write
-    uses: pgextwin/build/.github/workflows/promote-legacy-verified-release.yml@8cdf68c82d1aae202a706d2bd15db29be10c9e2b
+    uses: pgextwin/build/.github/workflows/promote-legacy-verified-release.yml@51b5bf5c93740bbeae49763bbc7b04fd9f187e72
     with:
       candidate_pr: ${{ inputs.candidate_pr }}
       candidate_run_id: ${{ inputs.candidate_run_id }}
