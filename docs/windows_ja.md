@@ -31,7 +31,7 @@ pg_bigm（ピージーバイグラム）は、PostgreSQL上で全文検索機能
 pg_bigm-v1.2-20250903-pg18-windows-x64.zip
 ~~~
 
-必要に応じて、同じReleaseに添付されている `SHA256SUMS.txt` でファイルのSHA-256を確認してください。
+必要に応じて、同じReleaseに添付されている `SHA256SUMS.txt` とファイルのSHA-256を照合してください。
 
 PowerShellで確認する場合:
 
@@ -100,7 +100,7 @@ C:\Program Files\PostgreSQL\18\share\extension
 shared_preload_libraries = 'pg_bigm'
 ~~~
 
-既に他の共有ライブラリを指定している場合は、既存設定を消さず、PostgreSQLの設定形式に従って `pg_bigm` を追加してください。
+ほかの共有ライブラリを既に指定している場合は、既存の設定を消さず、PostgreSQLの設定形式に従って `pg_bigm` を追加してください。
 
 公式pg_bigmドキュメントでは、`shared_preload_libraries` または用途に応じて `session_preload_libraries` に `pg_bigm` を設定する必要があるとされています。
 
