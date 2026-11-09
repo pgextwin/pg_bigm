@@ -12,12 +12,12 @@
 
 1. バックアップを取り、[上流のpg_bigmドキュメント](https://github.com/pgbigm/pg_bigm)で必要条件を確認します。
 2. 既存ファイルの置き換え前にPostgreSQLを停止します。対応するZIP内のlib/とshare/extension/以下を、PostgreSQLの同名ディレクトリへ配置します。
-3. 使用方法に応じてshared_preload_librariesまたはsession_preload_librariesでpg_bigmをロードしてください。共有の事前ロード設定を変更した場合はPostgreSQLの再起動が必要です。 ファイルの配置と必要な設定を終えてからPostgreSQLを起動します。
-4. 利用するデータベースでCREATE EXTENSION pg_bigm;を実行します。
+3. 利用方法に応じて`shared_preload_libraries`または`session_preload_libraries`でpg_bigmをロードするよう設定してください。共有の事前ロード設定を変更した場合はPostgreSQLの再起動が必要です。ファイルの配置と必要な設定を終えてからPostgreSQLを起動します。
+4. 利用するデータベースで`CREATE EXTENSION pg_bigm;`を実行します。
 
 Windowsでの詳しい手順は[導入ガイド](docs/windows_ja.md)を参照してください。
 
-ReleaseのSHA256SUMS.txtでZIPを照合してください。SPDX形式のSBOM、脆弱性レポート、署名付き証明の有無はReleaseで確認できます。本番導入前に検証環境で動作を確認してください。
+ダウンロードしたZIPを、Releaseに掲載された`SHA256SUMS.txt`と照合してください。SPDX形式のSBOM、脆弱性レポート、署名付き証明の有無はReleaseで確認できます。本番環境に導入する前に、検証環境で動作を確認してください。
 
 ## ライセンス
 
