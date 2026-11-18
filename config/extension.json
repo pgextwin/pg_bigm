@@ -3,9 +3,9 @@
   "name": "pg_bigm",
   "upstream": {
     "repository": "pgbigm/pg_bigm",
-    "ref": "v1.2-20250903",
-    "version": "1.2",
-    "commit": "735dceba0ecdd8ac1aaaaa207226a7102b6bbd71"
+    "ref": "v1.2-20261118",
+    "version": "1.2-20261118",
+    "commit": "a372ba66e192bc2cdc9dfe6e482d167fecc9a1c2"
   },
   "postgresql": {
     "minMajor": 14,
