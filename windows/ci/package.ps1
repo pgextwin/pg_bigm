@@ -44,6 +44,9 @@ New-Item -ItemType Directory -Force -Path (Join-Path $stage "docs") | Out-Null
 Copy-Item (Join-Path $BuildDir "Release\pg_bigm.dll") (Join-Path $stage "lib\pg_bigm.dll")
 Copy-Item (Join-Path $UpstreamDir "pg_bigm.control") (Join-Path $stage "share\extension\pg_bigm.control")
 Copy-Item (Join-Path $UpstreamDir "pg_bigm--*.sql") (Join-Path $stage "share\extension\")
+# Restore the pinned license without Windows checkout line-ending conversion.
+& git -C $UpstreamDir -c core.autocrlf=false checkout-index --force -- LICENSE
+if ($LASTEXITCODE -ne 0) { throw "Could not restore exact upstream LICENSE bytes." }
 Copy-Item (Join-Path $UpstreamDir "LICENSE") (Join-Path $stage "LICENSE")
 Copy-Item (Join-Path $UpstreamDir "README.md") (Join-Path $stage "UPSTREAM-README.md")
 
