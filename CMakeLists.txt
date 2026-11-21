@@ -57,5 +57,5 @@ if(MSVC)
         TARGET pg_bigm
         PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
     )
-    target_compile_options(pg_bigm PRIVATE /W3)
+    target_compile_options(pg_bigm PRIVATE /W3 /std:c11)
 endif()

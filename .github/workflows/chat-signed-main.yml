@@ -14,16 +14,8 @@ concurrency:
 jobs:
   signed_main_source:
     name: Authenticate owner Issue 73 and attest true protected main (NONPUBLISHING)
-    if: >-
-      ${{ github.repository == 'pgextwin/pg_bigm' &&
-          github.event_name == 'issue_comment' &&
-          github.ref == 'refs/heads/main' &&
-          github.event.issue.number == 73 &&
-          !github.event.issue.pull_request &&
-          github.event.comment.body == '/pgextwin sign-main' &&
-          github.actor == 'ShutenOishi' &&
-          github.triggering_actor == 'ShutenOishi' &&
-          github.run_attempt == 1 }}
+    # The shared workflow authenticates the owner, issue, protected main and attempt.
+    if: ${{ github.event_name == 'issue_comment' }}
     permissions:
       contents: read
       issues: read
@@ -31,7 +23,7 @@ jobs:
       id-token: write
       attestations: write
       artifact-metadata: write
-    uses: pgextwin/build/.github/workflows/chat-signed-main-source.yml@e73f96515d3d297ea51a68070d06139a15481c50
+    uses: pgextwin/build/.github/workflows/chat-signed-main-source.yml@2cb9c5dd6c59ccd70df98124d19688a7ea6c3eb5
     with:
       request_issue: 73
       extension_config_path: config/extension.json
